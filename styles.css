@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+body {
+  font-family: 'EB Garamond',
+    serif;
+  text-align: left;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#mydate {
+  font-size: 6vw;
+  margin-top: 250px;
+  margin-left: 135px;
+}
+
+#mytime {
+  font-size: 11vw;
+  margin-left: 135px;
+}
+
+@media screen and (min-width: 1000px) {
+  #mydate {
+    font-size: 62px;
+  }
+
+  #mytime {
+    font-size: 112px;
+  }
+}

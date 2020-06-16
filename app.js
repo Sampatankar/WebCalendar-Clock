@@ -1,6 +1,6 @@
 //FUNCTION TO SHOW THE DAY:
 function showDate() {
-  //Initialise a string:  
+  //Initialise a string:
   let str = "";
 
   //Create a variable calling the date method so we can take bits of it as needed:
@@ -65,8 +65,7 @@ function showDate() {
 }
 
 //Run the function showDate every second:
-setInterval(showDate, 1000);
-
+setInterval(showDate, 500);
 
 //FUNCTION TO SHOW THE TIME:
 function doTime() {
@@ -74,17 +73,42 @@ function doTime() {
 
   let now = new Date();
 
-  function addZero() {
-    if (now.getHours() < 10 || now.getMinutes() < 10 || now.getSeconds() < 10) {
-      return '0';
+  //three functions - one being triggered won't trigger the others:
+  function addZeroS() {
+    if (now.getSeconds() < 10) {
+      return "0";
     } else {
-      return '';
+      return "";
     }
   }
 
-  str += addZero() + now.getHours() + ":" + addZero() + now.getMinutes() + ":" + addZero() + now.getSeconds();
+  function addZeroM() {
+    if (now.getMinutes() < 10) {
+      return "0";
+    } else {
+      return "";
+    }
+  }
+
+  function addZeroH() {
+    if (now.getHours() < 10) {
+      return "0";
+    } else {
+      return "";
+    }
+  }
+
+  str +=
+    addZeroH() +
+    now.getHours() +
+    ":" +
+    addZeroM() +
+    now.getMinutes() +
+    ":" +
+    addZeroS() +
+    now.getSeconds();
 
   document.getElementById("mytime").innerHTML = str;
 }
 
-setInterval(doTime, 1000);
+setInterval(doTime, 500);
